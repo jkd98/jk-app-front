@@ -1,0 +1,36 @@
+.gota {
+    display: none;
+    background: url(/public/12553833_4942062.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100dvh;
+    background-position: center right;
+    /* El secreto: valores diferentes para cada esquina */
+    mask-image: url(/public/vecteezy_blob-shape-element_8911238.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+}
+
+@media(min-width:768px) {
+    .gota {
+        display: block;
+    }
+}
+
+.auth-section {
+    background-image: linear-gradient(to right, rgb(0 0 0 /.7), rgb(0 0 0 /.7)), url(/public/12553833_4942062.jpg);
+    background-size: cover;
+    background-position: center left;
+    height: 100dvh;
+}
+
+@media(min-width:768px) {
+    .auth-section {
+        background-image: none;
+        display: grid;
+        grid-template-columns: 1.8fr 2fr;
+        /* column-gap: 4rem; */
+        align-items: center;
+    }
+}

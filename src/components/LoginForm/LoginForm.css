@@ -1,0 +1,44 @@
+.campo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* y */
+    justify-content: center;
+    /* x */
+    align-items: center;
+    padding-bottom: 2.4rem;
+}
+
+
+.campo label,
+.campo input,
+.campo select {
+    width: 100%;
+    padding-bottom: .8rem;
+}
+
+.campo label {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    font-size: 1.6rem;
+}
+
+.campo input, .campo select {
+    height: 5.6rem;
+    font-size: 1.8rem;
+    padding-inline: 1.6rem;
+    padding-block: 0;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: .1rem solid var(--blanco);
+    color: var(--blanco);
+}
+
+.campo input:focus {
+    outline: none;
+}
+
+.campo option{
+    color: var(--primary);
+}

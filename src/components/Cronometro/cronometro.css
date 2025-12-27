@@ -1,0 +1,83 @@
+.cron {
+    max-width: 30rem;
+    max-height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    border: .1rem solid var(--blanco);
+    border-radius: 100%;
+    padding: 2rem;
+    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+}
+
+
+.cron__time-box {
+    width: 100%;
+}
+
+.cron__time {
+    text-align: center;
+    font-size: 4rem;
+    margin: 0;
+    padding-block: 4rem;
+}
+
+@media (min-width:768px) {
+    .cron__time {
+        font-size: 5.5rem;
+    }
+}
+
+.cron__btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+
+.cron__btns button {
+    border: none;
+    border-radius: .5rem;
+    padding: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--blanco);
+    width: 50%;
+    transition-property: box-shadow;
+    transition-duration: 300ms;
+}
+
+.cron__btn--start {
+    background-color: var(--secondary);
+}
+
+.cron__btn--stop {
+    background-color: var(--red);
+}
+
+
+.cron__btns button:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: .1rem solid var(--blanco);
+    box-shadow: .1rem .1rem 4rem var(--secondary);
+}
+
+@keyframes circle-shadow {
+    from {
+        box-shadow: .1rem .1rem 1.5rem var(--blue);
+    }
+    
+    to {
+        box-shadow: .1rem .1rem 5rem var(--secondary);
+    }
+}
+
+.animation-circle {
+    animation: circle-shadow 5s linear infinite;
+}

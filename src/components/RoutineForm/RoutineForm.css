@@ -1,0 +1,36 @@
+fieldset {
+    padding: 2rem 0;
+    border: none;
+}
+
+.btn-delete,
+.btn-agg {
+    border: none;
+    width: 40%;
+    height: 5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-radius: 1rem;
+}
+
+.cont-btn-delete{
+    display: flex;
+    justify-content: right;
+}
+
+.btn-delete{
+    background-color: var(--red-bg);
+    color: var(--red);
+
+}
+
+.btn-agg {
+    margin-top: 2rem;
+    width: 100%;
+    background-color: var(--green-bg);
+    color: var(--green);
+}
+
+.section-form{
+    height: 100%;
+}

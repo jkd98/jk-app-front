@@ -1,0 +1,76 @@
+:root {
+    --primary: #030111ff;
+    --blanco: #FFF;
+    --secondary: rgb(78, 0, 129);
+    --blue: rgb(19, 0, 129);
+    --red: rgb(214, 45, 45);
+    --red-bg: rgb(248, 176, 176);
+    --green: green;
+    --green-bg: rgb(212, 255, 196);
+    --fuente-principal: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--primary);
+    font-size: 1.6rem;
+}
+
+div {
+    color: var(--blanco);
+}
+
+
+.btn-block {
+    height: 5.6rem;
+    font-size: 1.8rem;
+    padding-inline: 1.6rem;
+    padding-block: 0;
+    border: none;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-add {
+    display: flex;
+    flex-direction: column;
+    /* y */
+    justify-content: center;
+    /* x */
+    align-items: center;
+    background-color: var(--secondary);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 3rem;
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: 800;
+    font-size: 4rem;
+    position: fixed;
+    bottom: 5%;
+    right: 7%;
+}
+
+@media(min-width:768px) {
+    .btn-add {
+        display: none;
+    }
+}

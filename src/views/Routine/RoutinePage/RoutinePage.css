@@ -1,0 +1,60 @@
+.routines {
+    position: relative;
+}
+
+.routines h1 {
+    text-align: center;
+    padding: 4rem 0rem;
+}
+
+.routines-list {
+    display: grid;
+}
+
+@media(min-width:768px) {
+    .routines-list {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.routine-detail {
+    width: 100%;
+    background-color: var(--secondary);
+    padding: 0 2rem 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.routine-detail:last-of-type {
+    margin-bottom: 0;
+}
+
+@media(min-width:768px) {
+    .routine-detail {
+        margin-bottom: 0;
+    }
+}
+
+.routine__name {
+    padding-block: 2rem;
+}
+
+.routine-exercises {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    column-gap: 1rem;
+    align-items: center;
+}
+
+.routine-exercises p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.routine-exercises span {
+    font-weight: 600;
+}
