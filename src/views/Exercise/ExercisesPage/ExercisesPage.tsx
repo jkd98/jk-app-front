@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import { useGetExercises } from "../../../hooks/useExercise"
-import './ExercisesPage.css';
+import s from './ExercisesPage.module.css';
 import { Link } from "react-router-dom";
 import CreateExercisePage from "../CreateExercisePage/CreateExercisePage";
 
@@ -10,13 +10,13 @@ export default function ExercisesPage() {
         toast(error.message, { toastId: 'x1' })
     }
     if (data) return (
-        <section className="section-exercises">
+        <section className={s["section-exercises"]}>
             <h1>Ejercicios</h1>
-            <div className="content">
-                <section className="exercises-list">
+            <div className={s["content"]}>
+                <section className={s["exercises-list"]}>
                     {data.length > 0 ? (
                         data.map(d => (
-                            <div className="exercise-detail">
+                            <div className={s["exercise-detail"]}>
                                 <p key={d._id} >{d.name}</p>
                             </div>
                         ))
@@ -24,7 +24,7 @@ export default function ExercisesPage() {
                         <p>No tienes ejercicios registrados</p>
                     )}
                 </section>
-                <div className="form-create">
+                <div className={s["form-create"]}>
                     <CreateExercisePage></CreateExercisePage>
                 </div>
             </div>

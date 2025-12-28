@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import './RoutinePage.css';
+import styles from './RoutinePage.module.css';
+
 import { useGetRoutines } from "../../../hooks/useRoutine";
 import { toast } from "react-toastify";
 
@@ -13,17 +14,17 @@ export default function RoutinePage() {
 
   if (data) {
     return (
-      <section className="routines">
+      <section className={styles["routines"]}>
         <h1>Mis Rutinas</h1>
-        <section className="routines-list">
+        <section className={styles["routines-list"]}>
           {data.length > 0 ? (
             data.map((r) => (
-              <div className="routine-detail" key={r._id} onClick={()=>navigate(`/rutina/${r._id}`)} >
-                <h3 className="routine__name">{r.name}</h3>
-                <div className="routine-exercises-cont">
+              <div className={styles["routine-detail"]} key={r._id} onClick={() => navigate(`/rutina/${r._id}`)} >
+                <h3 className={styles["routine__name"]}>{r.name}</h3>
+                <div className={styles["routine-exercises-cont"]}>
                   {r.exercises && r.exercises.length > 0 ?
-                    (r.exercises.map(e => (<div className="routine-exercises" key={e.exerciseId._id}>
-                      <p className="e-name"><span>{e.exerciseId.name}</span></p>
+                    (r.exercises.map(e => (<div className={styles["routine-exercises"]} key={e.exerciseId._id}>
+                      <p className={styles["e-name"]}><span>{e.exerciseId.name}</span></p>
                       <p>Repeticiones: <span>{e.reps}</span></p>
                       <p>Series: <span>{e.series}</span></p>
                       <p>Peso: <span>{e.weight}</span></p>

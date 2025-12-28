@@ -1,8 +1,8 @@
 import type { FieldArrayWithId, FieldErrors, FieldPath, UseFieldArrayAppend, UseFieldArrayRemove, UseFormRegister } from 'react-hook-form';
-import '../LoginForm/LoginForm.css';
+import sf from '../LoginForm/LoginForm.module.css';
 import type { DraftRoutineT } from '../../types';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import './RoutineForm.css'
+import s from './RoutineForm.module.css'
 import { useGetExercises } from '../../hooks/useExercise';
 
 type RoutineFormProps = {
@@ -17,7 +17,7 @@ export default function RoutineForm({ register, errors, fields, append, remove }
     const { data } = useGetExercises();
     return (
         <>
-            <div className="campo">
+            <div className={sf["campo"]}>
                 <label htmlFor="name">Nombre:</label>
                 <input
                     type="text"
@@ -33,12 +33,12 @@ export default function RoutineForm({ register, errors, fields, append, remove }
                 {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
             </div>
 
-            <fieldset className="exercises">
+            <fieldset className={s["exercises"]}>
                 <legend>Ejercicios</legend>
                 {/* 1. La lista de ejercicios (Vagones) */}
                 {fields.map((field, index) => (
-                    <div key={field.id} className="ejercicio-row">
-                        <div className="campo">
+                    <div key={field.id} className={s["ejercicio-row"]}>
+                        <div className={sf["campo"]}>
                             <label htmlFor='exercises'>Ejercicio:</label>
                             <select id='exercises' {...register(`exercises.${index}.exerciseId` as FieldPath<DraftRoutineT>)}>
                                 <option value="">-- Seleccionar --</option>
@@ -46,7 +46,7 @@ export default function RoutineForm({ register, errors, fields, append, remove }
                             </select>
                         </div>
 
-                        <div className="campo">
+                        <div className={sf["campo"]}>
                             <label htmlFor="series">Series:</label>
                             <input
                                 id='series'
@@ -56,7 +56,7 @@ export default function RoutineForm({ register, errors, fields, append, remove }
                             />
                         </div>
 
-                        <div className="campo">
+                        <div className={sf["campo"]}>
                             <label htmlFor="reps">Repeticiones:</label>
                             <input
                                 type="number"
@@ -66,7 +66,7 @@ export default function RoutineForm({ register, errors, fields, append, remove }
                             />
                         </div>
 
-                        <div className="campo">
+                        <div className={sf["campo"]}>
                             <label htmlFor="weight">Peso:</label>
                             <input
                                 type="number"
@@ -77,9 +77,9 @@ export default function RoutineForm({ register, errors, fields, append, remove }
                         </div>
 
                         {/* El botón de eliminar SI va dentro de la fila */}
-                        <div className="cont-btn-delete">
+                        <div className={s["cont-btn-delete"]}>
 
-                            <button className='btn-delete' type="button" onClick={() => remove(index)}>
+                            <button className={s['btn-delete']} type="button" onClick={() => remove(index)}>
                                 Eliminar
                             </button>
                         </div>
@@ -88,7 +88,7 @@ export default function RoutineForm({ register, errors, fields, append, remove }
 
                 {/* 2. El botón de añadir SIEMPRE fuera del map */}
                 <button
-                    className='btn-agg'
+                    className={s['btn-agg']}
                     type="button"
                     onClick={() => append({ exerciseId: '', series: 0, reps: 0, weight: 0 })}
                 >

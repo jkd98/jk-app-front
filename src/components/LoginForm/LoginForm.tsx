@@ -1,5 +1,5 @@
 import type { FieldErrors, UseFormRegister } from 'react-hook-form';
-import './LoginForm.css';
+import s from './LoginForm.module.css';
 import type { LoginT } from '../../types';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
@@ -11,7 +11,7 @@ type LoginFormProps = {
 export default function LoginForm({ register, errors }: LoginFormProps) {
     return (
         <>
-            <div className="campo">
+            <div className={s["campo"]}>
                 <label htmlFor="email">Email:</label>
                 <input
                     type="text"
@@ -26,7 +26,7 @@ export default function LoginForm({ register, errors }: LoginFormProps) {
                 />
                 {errors.email && (<ErrorMessage>{errors.email.message}</ErrorMessage>)}
             </div>
-            <div className="campo">
+            <div className={s["campo"]}>
                 <label htmlFor="pass">Contraseña:</label>
                 <input
                     type="password"
