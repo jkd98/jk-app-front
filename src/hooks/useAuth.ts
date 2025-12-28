@@ -21,19 +21,24 @@ export const useLogin = () => {
 
 export const useGetUserAuth = () => {
     return useQuery({
-        queryKey:['userAuth'],
+        queryKey: ['userAuth'],
         queryFn: getUser,
-        retry:false
+        retry: false
     })
 }
 
 
 const notify = (msg: string) => toast(msg);
 
+const _keyJWT = '_jwtjk';
 export const setJWTLocalstorage = (data: string): void => {
-    window.localStorage.setItem('_jwtjk', data);
+    window.localStorage.setItem(_keyJWT, data);
 }
 
 export const getJWTLocalStorage = (): string | null => {
-    return window.localStorage.getItem('_jwtjk')
+    return window.localStorage.getItem(_keyJWT)
+}
+
+export const deleteJWTLocalStorage = (): void => {
+    window.localStorage.removeItem(_keyJWT);
 }

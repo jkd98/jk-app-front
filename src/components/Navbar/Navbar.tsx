@@ -1,7 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import s from './Navbar.module.css'
+import { logOut } from '../../services/AuthAPI'
 
 export default function Navbar() {
+    const navigate = useNavigate();
+    const handleLogOut = () => {
+        logOut();
+        navigate('/auth');
+    }
+
     return (
         <nav className={s['nav']}>
             <Link to='/' className={[s['nav__link'], s['nav__logo']].join(' ')} >JK<span className={s['span']}>App</span></Link>
@@ -10,7 +17,8 @@ export default function Navbar() {
                 <Link to='/ejercicios' className={[s['nav__link'], s['nav__item']].join(' ')} >Ejercicios</Link>
             </div>
             <div className={s['nav__session']}>
-                <button className={s['session__logout']}>Cerrar Session</button>
+                <button className={s['session__logout']}>Iniciar Session</button>
+                <button className={s['session__logout']} onClick={()=>handleLogOut()}>Cerrar Session</button>
             </div>
         </nav>
     )

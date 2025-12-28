@@ -1,6 +1,7 @@
 import { isAxiosError } from "axios";
 import axios from "../lib/axios"
 import { userSchema, type LoginT } from "../types"
+import { deleteJWTLocalStorage } from "../hooks/useAuth";
 
 export const login = async (formData: LoginT) => {
     try {
@@ -26,5 +27,14 @@ export const getUser = async () => {
         if (isAxiosError(error) && error.response) {
             throw new Error(error.response.data.msg);
         }
+    }
+}
+
+export const logOut = async () =>{
+    try {
+        deleteJWTLocalStorage();
+    } catch (error) {
+        console.log(error);
+        return error;
     }
 }

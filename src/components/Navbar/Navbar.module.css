@@ -67,3 +67,7 @@
 .nav__logo .span {
     font-weight: 800;
 }
+
+.session__logout {
+    background-color: transparent;
+}
