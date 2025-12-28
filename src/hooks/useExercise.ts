@@ -1,11 +1,14 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { createExercise, getExercises } from "../services/ExerciseAPI";
 
 import { toast } from 'react-toastify';
+import type { UseFormReset } from "react-hook-form";
+import type { DraftExerciseT } from "../types";
 
-export const useCreateExercise = () => {
+export const useCreateExercise = (reset:UseFormReset<DraftExerciseT>) => {
     const navigate = useNavigate();
+    const queryClient = useQueryClient(); // Instanciar el cliente
     return useMutation({
         mutationFn: createExercise,
         onError: (error) => {
@@ -15,6 +18,9 @@ export const useCreateExercise = () => {
         onSuccess: (data) => {
             console.log(data);
             notify(data.msg);
+            reset({name:''});
+            // Invalidar la cache de 'exercises'
+            queryClient.invalidateQueries({ queryKey: ['exercises'] });
             navigate('/ejercicios');
         }
     })
