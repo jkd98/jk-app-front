@@ -1,23 +1,37 @@
-.page{
+.page {
     display: grid;
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
 }
 
-.nav{
-    grid-row: 1/2;
+.header {
+    width: 100%;
+    grid-row: 1 / 2;
+    padding: 2rem 0rem;
+
+    /* 1. Fondo con transparencia (importante para que se vea el efecto) */
+    background-color: transparent;
+
+    /* 2. Aplica el desenfoque a lo que está POR DEBAJO del header */
+    backdrop-filter: blur(10px);
+
+    /* 3. Opcional: un borde sutil para que resalte más */
+    border-bottom: 1px solid var(--gray);
+    position: sticky;
+    top: 0;
+    z-index: 99;
 }
 
-.main{
-    grid-row:2/3;
+.main {
+    grid-row: 2/3;
     width: 95%;
     max-width: 120rem;
     margin: 0 auto;
-    
+
 }
 
 .footer {
-    grid-row:3/4
+    grid-row: 3/4
 }
 
 .up {

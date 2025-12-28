@@ -4,6 +4,7 @@ import './Layout.css'
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useGetUserAuth } from "../hooks/useAuth";
+import Navbar from "../components/Navbar/Navbar";
 
 
 export default function Layout() {
@@ -19,7 +20,9 @@ export default function Layout() {
   if (data) {
     return (
       <div className="page">
-        <header className="nav">Header</header>
+        <header className="header">
+          <Navbar></Navbar>
+        </header>
         <main className="main">
           <ToastContainer></ToastContainer>
 
