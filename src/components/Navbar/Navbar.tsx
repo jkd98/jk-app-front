@@ -17,7 +17,7 @@ export default function Navbar() {
                 <Link to='/ejercicios' className={[s['nav__link'], s['nav__item']].join(' ')} >Ejercicios</Link>
             </div>
             <div className={s['nav__session']}>
-                <button className={s['session__logout']}>Iniciar Session</button>
+                <Link to='/auth' className={[ s['nav__link'], s['session__logout']].join(' ')}>Iniciar Session</Link>
                 <button className={s['session__logout']} onClick={()=>handleLogOut()}>Cerrar Session</button>
             </div>
         </nav>
