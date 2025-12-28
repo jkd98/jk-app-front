@@ -13,9 +13,10 @@ export default function CreateExercisePage() {
   const {
     register, // Permite registrar input o select y aplicar reglas de validación de la libreria o crearlos
     handleSubmit, // Procesa el formulario
-    formState: { errors } // ver el estado del formulario, se destructura para extraer lo deseado
+    formState: { errors }, // ver el estado del formulario, se destructura para extraer lo deseado,
+    reset
   } = useForm({ defaultValues: initialValues });
-  const { mutate } = useCreateExercise();
+  const { mutate } = useCreateExercise(reset);
 
 
   const handleForm = async (data: DraftExerciseT) => mutate(data);

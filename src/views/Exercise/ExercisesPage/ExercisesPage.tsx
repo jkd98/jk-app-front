@@ -16,8 +16,8 @@ export default function ExercisesPage() {
                 <section className="exercises-list">
                     {data.length > 0 ? (
                         data.map(d => (
-                            <div className="exercise-detail">
-                                <p key={d._id} >{d.name}</p>
+                            <div key={d._id} className="exercise-detail">
+                                <p  >{d.name}</p>
                             </div>
                         ))
                     ) : (
