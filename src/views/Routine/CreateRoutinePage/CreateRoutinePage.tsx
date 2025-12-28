@@ -3,9 +3,11 @@ import RoutineForm from "../../../components/RoutineForm/RoutineForm";
 
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import '../../Auth/LoginPage/LoginPage.css';
 import type { DraftRoutineT } from "../../../types";
 import { useCreateRoutine } from "../../../hooks/useRoutine";
+
+import s from './CreateRoutinePage.module.css'
+import slp from '../../Auth/LoginPage/LoginPage.module.css';
 
 export default function CreateRoutinePage() {
 
@@ -22,9 +24,9 @@ export default function CreateRoutinePage() {
     const { mutate } = useCreateRoutine();
     const handleForm = async (data: DraftRoutineT) => { mutate(data) };
     return (
-        <section className="section-form">
+        <section className={s["section-form"] }>
             <h1>Crear Rutina</h1>
-            <form action="" className="form" noValidate onSubmit={handleSubmit(handleForm)}>
+            <form className={slp["form"]} noValidate onSubmit={handleSubmit(handleForm)}>
                 <ToastContainer></ToastContainer>
                 <RoutineForm
                     register={register}

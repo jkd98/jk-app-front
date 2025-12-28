@@ -1,0 +1,10 @@
+.section-form{
+    height: 100%;
+}
+
+@media(min-width:768px) {
+    .section-form {
+      margin: 0 auto;
+      width: 50%;
+    }
+  }

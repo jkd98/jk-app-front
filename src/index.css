@@ -1,7 +1,9 @@
 :root {
-    --primary: #030111ff;
+    --primary: rgb(4, 2, 27);
     --blanco: #FFF;
+    --gray: #b8b8b856;
     --secondary: rgb(78, 0, 129);
+    --third: rgb(7, 3, 36);
     --blue: rgb(19, 0, 129);
     --red: rgb(214, 45, 45);
     --red-bg: rgb(248, 176, 176);
@@ -34,6 +36,11 @@ div {
     color: var(--blanco);
 }
 
+h1 {
+    padding-bottom: 1.6rem;
+    text-align: center;
+    text-transform: capitalize;
+}
 
 .btn-block {
     height: 5.6rem;
@@ -67,6 +74,7 @@ div {
     position: fixed;
     bottom: 5%;
     right: 7%;
+    z-index: 100;
 }
 
 @media(min-width:768px) {

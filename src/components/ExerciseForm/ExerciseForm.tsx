@@ -2,7 +2,7 @@ import type { FieldErrors, UseFormRegister } from "react-hook-form";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import type { DraftExerciseT } from "../../types";
 
-import '../LoginForm/LoginForm.css';
+import s from '../LoginForm/LoginForm.module.css';
 
 type ExerciseFormProps = {
     register: UseFormRegister<DraftExerciseT>;
@@ -12,7 +12,7 @@ type ExerciseFormProps = {
 export default function ExerciseForm({ register, errors }: ExerciseFormProps) {
     return (
         <>
-            <div className="campo">
+            <div className={s["campo"]}>
                 <label htmlFor="name">Nombre:</label>
                 <input
                     type="text"

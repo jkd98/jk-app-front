@@ -2,6 +2,7 @@
   /* .gota {
   width: 300px;
   height: 300px;
+  cuando la ruta es de public no lleva '/public/*
   background: url(/public/wallpaperflare.com_wallpaper.jpg);
   background-size: cover;
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
@@ -19,19 +20,13 @@
 
   }
 
-  .section-form h1 {
-    padding-bottom: 1.6rem;
-    text-align: center;
-    text-transform: capitalize;
-  }
-
-  .section-form .form {
+  .form {
     padding: 0 1.6rem;
     padding-top: 1.6rem;
 
   }
 
-   @media(min-width:768px) {
+  @media(min-width:768px) {
     .section-form {
       margin: 0 auto;
       width: 60%;

@@ -1,4 +1,4 @@
-fieldset {
+.exercises {
     padding: 2rem 0;
     border: none;
 }
@@ -31,6 +31,3 @@ fieldset {
     color: var(--green);
 }
 
-.section-form{
-    height: 100%;
-}
