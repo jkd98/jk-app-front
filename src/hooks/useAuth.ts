@@ -27,7 +27,7 @@ export const useGetUserAuth = () => {
     })
 }
 
-export const useLogout = () => {
+export const logout = () => {
     deleteJWTLocalStorage();
 }
 

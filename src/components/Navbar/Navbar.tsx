@@ -1,13 +1,13 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import s from './Navbar.module.css'
-import { useGetUserAuth, useLogout } from '../../hooks/useAuth';
+import { useGetUserAuth, logout } from '../../hooks/useAuth';
 import { useQueryClient } from '@tanstack/react-query';
 
 export default function Navbar() {
     const { data } = useGetUserAuth();
     const queryClient = useQueryClient();
     const handleLogOut = () => {
-        useLogout()
+        logout()
         queryClient.invalidateQueries({ queryKey: ['userAuth'] })
     }
 
