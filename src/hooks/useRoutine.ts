@@ -31,7 +31,6 @@ export const useGetRoutine = (id:string) => {
     return useQuery({
         queryKey:['one-routine',id],
         queryFn: ()=>getRoutineById(id),
-
         retry:false
     })
 }

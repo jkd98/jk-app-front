@@ -9,7 +9,7 @@ export default function AuthLayout() {
     return (<p>Cargando...</p>)
   }
 
-  if (isError && !data) {
+  if (isError) {
     return (
       <section className="auth-section">
         <div className="gota"></div>

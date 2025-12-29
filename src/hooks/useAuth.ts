@@ -27,6 +27,9 @@ export const useGetUserAuth = () => {
     })
 }
 
+export const useLogout = () => {
+    deleteJWTLocalStorage();
+}
 
 const notify = (msg: string) => toast(msg);
 

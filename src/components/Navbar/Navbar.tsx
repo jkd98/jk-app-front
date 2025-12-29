@@ -1,12 +1,14 @@
 import { Link, useNavigate } from 'react-router-dom'
 import s from './Navbar.module.css'
-import { logOut } from '../../services/AuthAPI'
+import { useGetUserAuth, useLogout } from '../../hooks/useAuth';
+import { useQueryClient } from '@tanstack/react-query';
 
 export default function Navbar() {
-    const navigate = useNavigate();
+    const { data } = useGetUserAuth();
+    const queryClient = useQueryClient();
     const handleLogOut = () => {
-        logOut();
-        navigate('/auth');
+        useLogout()
+        queryClient.invalidateQueries({ queryKey: ['userAuth'] })
     }
 
     return (
@@ -17,8 +19,11 @@ export default function Navbar() {
                 <Link to='/ejercicios' className={[s['nav__link'], s['nav__item']].join(' ')} >Ejercicios</Link>
             </div>
             <div className={s['nav__session']}>
-                <Link to='/auth' className={[ s['nav__link'], s['session__logout']].join(' ')}>Iniciar Session</Link>
-                <button className={s['session__logout']} onClick={()=>handleLogOut()}>Cerrar Session</button>
+                {
+                    data ?
+                        (<button className={s['session__logout']} onClick={() => handleLogOut()}>Cerrar Session</button>) :
+                        (<Link to='/auth' className={[s['nav__link'], s['session__logout']].join(' ')}>Iniciar Session</Link>)
+                }
             </div>
         </nav>
     )
