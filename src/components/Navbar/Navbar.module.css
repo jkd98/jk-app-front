@@ -62,6 +62,7 @@
 
 .nav__logo {
     font-size: 2rem;
+    font-family: var(--fuente-headings);
 }
 
 .nav__logo .span {

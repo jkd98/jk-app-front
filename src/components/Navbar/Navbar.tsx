@@ -15,7 +15,7 @@ export default function Navbar() {
         <nav className={s['nav']}>
             <Link to='/' className={[s['nav__link'], s['nav__logo']].join(' ')} >JK<span className={s['span']}>App</span></Link>
             <div className={s['nav__links']}>
-                <Link to='/rutinas' className={[s['nav__link'], s['nav__item']].join(' ')} >Rutinas</Link>
+                <Link to='/rutinas' className={[s['nav__link'], s['nav__item']].join(' ')}  >Rutinas</Link>
                 <Link to='/ejercicios' className={[s['nav__link'], s['nav__item']].join(' ')} >Ejercicios</Link>
             </div>
             <div className={s['nav__session']}>

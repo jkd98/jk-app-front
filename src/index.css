@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=DynaPuff:wght@400..700&display=swap');
+
 :root {
     --primary: rgb(4, 2, 27);
     --blanco: #FFF;
@@ -9,7 +11,8 @@
     --red-bg: rgb(248, 176, 176);
     --green: green;
     --green-bg: rgb(212, 255, 196);
-    --fuente-principal: 'Outfit', sans-serif;
+    --fuente-principal: "Comic Relief", system-ui;
+    --fuente-headings: "DynaPuff", system-ui;
 }
 
 * {
@@ -28,8 +31,10 @@ html {
 }
 
 body {
-    background-color: var(--primary);
+    background: linear-gradient(185deg, var(--blue) 0%, var(--blue) 10%, var(--third) 30%);
     font-size: 1.6rem;
+    font-family: var(--fuente-principal);
+    font-style: normal;
 }
 
 div {
@@ -40,7 +45,14 @@ h1 {
     padding-bottom: 1.6rem;
     text-align: center;
     text-transform: capitalize;
+    font-family: var(--fuente-headings);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-weight: 600;
 }
+
 
 .btn-block {
     height: 5.6rem;
@@ -81,4 +93,47 @@ h1 {
     .btn-add {
         display: none;
     }
+}
+
+/* bg cards hover */
+.bg-cards {
+    background: var(--third);
+    border: .1rem solid var(--gray);
+    position: relative;
+    /* Necesario para contener la capa del gradiente */
+    overflow: hidden;
+    /* Para que el gradiente no se salga de las esquinas redondeadas */
+    z-index: 1;
+    /* Asegura que el contenido se vea */
+}
+
+/* Creamos una capa invisible con el gradiente */
+.bg-cards::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* entre el 10% y el 80% es donde ocurre el degradado */
+    /* 0deg hacia arriba */
+    /* 90deg hacia la derecha */
+    /* 180deg hacia abajo */
+    /* 270deg hacia la izquierda */
+    background: linear-gradient(140deg, var(--blue) 0%, var(--blue) 10%, var(--third) 80%);
+    opacity: 0;
+    /* Al principio no se ve */
+    transition: opacity 300ms ease-in-out;
+    /* ¡Aquí sí funciona la transición! */
+    z-index: -1;
+    /* Se queda detrás del texto pero delante del fondo original */
+}
+
+.bg-cards:hover {
+    box-shadow: 0 10px 20px rgba(19, 0, 129, 0.281);
+}
+
+/* Cuando pasas el ratón, la capa del gradiente aparece suavemente */
+.bg-cards:hover::before {
+    opacity: 1;
 }

@@ -19,7 +19,7 @@ export default function RoutinePage() {
         <section className={styles["routines-list"]}>
           {data.length > 0 ? (
             data.map((r) => (
-              <div className={styles["routine-detail"]} key={r._id} onClick={() => navigate(`/rutina/${r._id}`)} >
+              <div className={[styles["routine-detail"], 'bg-cards'].join(' ')} key={r._id} onClick={() => navigate(`/rutina/${r._id}`)} >
                 <h3 className={styles["routine__name"]}>{r.name}</h3>
                 <div className={styles["routine-exercises-cont"]}>
                   {r.exercises && r.exercises.length > 0 ?

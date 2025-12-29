@@ -14,7 +14,7 @@ export default function RoutineDetailPage() {
                     <div className={s["routine-exercises-cont"]}>
                         {data.exercises && data.exercises.length > 0 ?
                             (data.exercises.map(e => (
-                                <div className={s["routine-exercises"]} key={e.exerciseId._id}>
+                                <div className={[s["routine-exercises"],'bg-cards'].join(' ')} key={e.exerciseId._id}>
                                     <div className={s["exercise-detail"]}>
                                         <p className={s["e-name"]}><span>{e.exerciseId.name}</span></p>
                                         <p>Repeticiones: <span>{e.reps}</span></p>

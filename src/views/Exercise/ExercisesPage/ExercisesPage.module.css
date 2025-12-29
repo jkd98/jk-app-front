@@ -55,16 +55,11 @@
     width: 100%;
     height: 100%;
     /* entre el 10% y el 80% es donde ocurre el degradado */
-
     /* 0deg hacia arriba */
-
     /* 90deg hacia la derecha */
-
     /* 180deg hacia abajo */
-
     /* 270deg hacia la izquierda */
     background: linear-gradient(140deg, var(--blue) 0%, var(--blue) 10%, var(--third) 80%);
-
     opacity: 0;
     /* Al principio no se ve */
     transition: opacity 300ms ease-in-out;
@@ -80,7 +75,6 @@
 /* Cuando pasas el ratón, la capa del gradiente aparece suavemente */
 .exercise-detail:hover::before {
     opacity: 1;
-    
 }
 
 

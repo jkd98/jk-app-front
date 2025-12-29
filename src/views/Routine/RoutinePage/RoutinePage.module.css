@@ -20,7 +20,6 @@
 
 .routine-detail {
     width: 100%;
-    background-color: var(--secondary);
     padding: 0 2rem 2rem;
     border-radius: 1rem;
     margin-bottom: 2rem;
@@ -58,3 +57,5 @@
 .routine-exercises span {
     font-weight: 600;
 }
+
+
