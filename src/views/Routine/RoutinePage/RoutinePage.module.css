@@ -13,7 +13,7 @@
 
 @media(min-width:768px) {
     .routines-list {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
     }
 }
@@ -23,6 +23,7 @@
     padding: 0 2rem 2rem;
     border-radius: 1rem;
     margin-bottom: 2rem;
+
 }
 
 .routine-detail:last-of-type {

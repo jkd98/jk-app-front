@@ -16,7 +16,7 @@ export default function ExercisesPage() {
                 <section className={s["exercises-list"]}>
                     {data.length > 0 ? (
                         data.map(d => (
-                            <div key={d._id} className={s["exercise-detail"]}>
+                            <div key={d._id} className={[s["exercise-detail"],'bg-cards'].join(' ')}>
                                 <p  >{d.name}</p>
                             </div>
                         ))

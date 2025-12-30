@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=DynaPuff:wght@400..700&display=swap');
 
 :root {
-    --primary: rgb(4, 2, 27);
-    --blanco: #FFF;
+    --primary: #04021b;
+    --blanco: #ebebeb;
     --gray: #b8b8b856;
     --secondary: rgb(78, 0, 129);
     --third: rgb(7, 3, 36);
-    --blue: rgb(19, 0, 129);
+    --blue: rgb(11, 0, 75);
+    --blue2: #2f27ce;
+    --accent: #dedcff;
     --red: rgb(214, 45, 45);
     --red-bg: rgb(248, 176, 176);
     --green: green;
@@ -31,7 +33,7 @@ html {
 }
 
 body {
-    background: linear-gradient(185deg, var(--blue) 0%, var(--blue) 10%, var(--third) 30%);
+    background-color: var(--primary);
     font-size: 1.6rem;
     font-family: var(--fuente-principal);
     font-style: normal;
@@ -42,7 +44,7 @@ div {
 }
 
 h1 {
-    padding-bottom: 1.6rem;
+    padding-block: 3rem;
     text-align: center;
     text-transform: capitalize;
     font-family: var(--fuente-headings);
@@ -62,10 +64,14 @@ h1 {
     border: none;
     width: 100%;
     border-radius: .5rem;
+    background-color: var(--blue2);
+    color: var(--blanco);
+    font-weight: 700;
 }
 
 .btn:hover {
     cursor: pointer;
+    filter: brightness(1.5);
 }
 
 .btn-add {
@@ -75,7 +81,7 @@ h1 {
     justify-content: center;
     /* x */
     align-items: center;
-    background-color: var(--secondary);
+    background-color: var(--blue2);
     width: 5rem;
     height: 5rem;
     border-radius: 3rem;
@@ -97,8 +103,9 @@ h1 {
 
 /* bg cards hover */
 .bg-cards {
-    background: var(--third);
-    border: .1rem solid var(--gray);
+    background-color: var(--primary);
+    filter: brightness(1.5);
+    /* border: .1rem solid var(--gray); */
     position: relative;
     /* Necesario para contener la capa del gradiente */
     overflow: hidden;

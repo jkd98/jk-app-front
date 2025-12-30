@@ -26,7 +26,6 @@
 }
 
 .routine-detail {
-    /* background-color: var(--secondary); */
     padding: 2rem 0;
     width: 100%;
     display: flex;
@@ -62,7 +61,6 @@
 .routine-exercises {
     padding-block: 2rem;
     padding-inline: 1.6rem;
-    border: 1px solid var(--blanco);
     border-radius: 1rem;
     margin-bottom: 2rem;
     display: grid;

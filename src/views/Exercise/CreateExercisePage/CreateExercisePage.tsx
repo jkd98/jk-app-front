@@ -5,6 +5,7 @@ import type { DraftExerciseT } from "../../../types";
 import { useCreateExercise } from "../../../hooks/useExercise"
 
 import slp from '../../Auth/LoginPage/LoginPage.module.css'
+import s from './CreateExercisePage.module.css'
 
 export default function CreateExercisePage() {
   const initialValues: DraftExerciseT = {
@@ -22,7 +23,7 @@ export default function CreateExercisePage() {
   const handleForm = async (data: DraftExerciseT) => mutate(data);
 
   return (
-    <section className={slp["section-form"]}>
+    <section className={[slp["section-form"],s['section-form']].join(' ')}>
       <h1>Crear Ejercicio</h1>
       <form
         onSubmit={handleSubmit(handleForm)}
