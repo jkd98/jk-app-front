@@ -60,3 +60,9 @@
 }
 
 
+.btn-actions__container {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border-radius: .5rem;
+}

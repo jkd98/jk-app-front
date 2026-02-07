@@ -1,0 +1,72 @@
+.routine-exercises-cont{
+    max-width: 90%;
+}
+
+.routine-exercises {
+    padding-block: 2rem;
+    padding-inline: 3rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 2fr .8fr;
+    /* y */
+    align-items: center;
+    /* x */
+    justify-content: center;
+    position: relative;
+}
+
+.routine-exercises:last-of-type {
+    margin-bottom: 0;
+}
+
+
+p {
+    font-weight: 400;
+}
+
+
+.e-name{
+    width: 100%;
+    text-align: center;
+    font-weight: 800;
+    grid-column: 1/3;
+}
+
+.exercise-detail{
+
+}
+
+.exercise-controls {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.exercise-controls label {
+    display: flex;
+    column-gap: .5rem;
+    font-size: 2rem;
+}
+
+.exercise-controls input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+}
+
+.btn-more-reps {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #e7c0c025;
+    border-radius: 50%;
+    color: var(--blanco);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    padding: .5rem;
+    font-size: 2rem;
+    backdrop-filter: blur(1px);
+}

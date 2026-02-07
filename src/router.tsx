@@ -47,6 +47,14 @@ export default function AppRouter() {
                         }
                     />
                     <Route
+                        path='/rutinas/editar/:id'
+                        element={
+                            <Suspense fallback="Cargando..">
+                                <CreateRoutinePage />
+                            </Suspense>
+                        }
+                    />
+                    <Route
                         path='/rutina/:id'
                         element={
                             <Suspense fallback="Cargando..">

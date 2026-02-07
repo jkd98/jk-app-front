@@ -42,7 +42,8 @@ export const routineSchema = z.object({
             weight: z.number(),
         })
     )),
-    createdBy: z.string()
+    createdBy: z.string(),
+    actionsMenu: z.optional(z.boolean())
 })
 
 export type RoutineT = z.infer<typeof routineSchema>;
