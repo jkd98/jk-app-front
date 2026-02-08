@@ -42,7 +42,7 @@ export default function RoutineForm({ register, errors, fields, append, remove }
                             <label htmlFor='exercises'>Ejercicio:</label>
                             <select id='exercises' {...register(`exercises.${index}.exerciseId` as FieldPath<DraftRoutineT>)}>
                                 <option value="">-- Seleccionar --</option>
-                                {data?.map(e=>(<option value={e._id}>{e.name}</option>))}
+                                {data?.map(e=>(<option key={e._id} value={e._id}>{e.name}</option>))}
                             </select>
                         </div>
 

@@ -1,12 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import styles from './RoutinePage.module.css';
-
 import { useGetRoutines } from "../../../hooks/useRoutine";
 import { toast } from "react-toastify";
 import ActionsMenu from "../../../components/ActionsMenu/ActionsMenu";
 import { useMemo, useState } from "react";
 import type { RoutineT } from "../../../types";
+
+import styles from './RoutinePage.module.css';
 
 export default function RoutinePage() {
 
