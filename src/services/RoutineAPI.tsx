@@ -47,3 +47,16 @@ export const getRoutineById = async (id:string) => {
         }
     }
 }
+
+export const updateRoutine = async (id:string,formData: DraftRoutineT) => {
+    try {
+        const {data} = await axios.patch(`routine/${id}`,formData);
+        console.log(data)
+        return data
+    } catch (error) {
+        console.log(error);
+        if(isAxiosError(error) && error.response){
+            throw new Error(error.response.data.msg);
+        }
+    }
+}

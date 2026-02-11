@@ -4,7 +4,7 @@ import RoutineForm from "../../../components/RoutineForm/RoutineForm";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import type { DraftRoutineT } from "../../../types";
-import { useCreateRoutine, useGetRoutine } from "../../../hooks/useRoutine";
+import { useCreateRoutine, useGetRoutine, useUpdateRoutine } from "../../../hooks/useRoutine";
 
 import s from './CreateRoutinePage.module.css'
 import slp from '../../Auth/LoginPage/LoginPage.module.css';
@@ -44,12 +44,14 @@ export default function CreateRoutinePage() {
     }
     
     const { mutate } = useCreateRoutine();
+    const { mutate:updateMutate } = useUpdateRoutine();
     const handleForm = async (data: DraftRoutineT) => { 
         if(!idRutina){
             mutate(data)
             return;
         }
         console.log("Actualizando");
+        updateMutate({id:idRutina,data})
     };
     return (
         <section className={s["section-form"] }>

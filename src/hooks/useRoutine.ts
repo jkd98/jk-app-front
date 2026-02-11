@@ -1,7 +1,8 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { createRoutine, getAllRoutines, getRoutineById } from "../services/RoutineAPI";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { createRoutine, getAllRoutines, getRoutineById, updateRoutine } from "../services/RoutineAPI";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import type { DraftRoutineT } from "../types";
 
 export const useCreateRoutine = () => {
     const navigate = useNavigate();
@@ -33,4 +34,31 @@ export const useGetRoutine = (id:string) => {
         queryFn: ()=>getRoutineById(id),
         retry:false
     })
+}
+
+
+// Definimos un tipo para lo que la mutación necesita recibir
+type UpdateRoutineArgs = {
+    id: string;
+    data: DraftRoutineT;
+};
+
+export const useUpdateRoutine = () => {
+    const navigate = useNavigate();
+    const queryClient = useQueryClient(); // Para invalidar el caché
+    return useMutation({
+        // 1. mutationFn recibe los argumentos aquí
+        mutationFn: ({ id, data }: UpdateRoutineArgs) => updateRoutine(id, data),
+        
+        onError: (error) => {
+            toast.error(error.message);
+        },
+        
+        onSuccess: (data) => {
+            // 2. IMPORTANTE: Invalidar la caché para que la UI se actualice
+            queryClient.invalidateQueries({ queryKey: ['routines'] });
+            toast.success(data.msg || "Rutina actualizada correctamente");
+            navigate('/rutinas')
+        }
+    });
 }
